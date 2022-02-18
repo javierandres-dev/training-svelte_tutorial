@@ -1,4 +1,5 @@
 <script>
+  import C15IfBlocks from './components/C15IfBlocks.svelte';
   import C01IntroductionBasics from './components/C01Basics.svelte';
   import C02IntroductionAddingData from './components/C02AddingData.svelte';
   import C03DynamicAttributes from './components/C03DynamicAttributes.svelte';
@@ -10,8 +11,22 @@
   import C09Declarations from './components/C09Declarations.svelte';
   import C10Statements from './components/C10Statements.svelte';
   import C11UpdatingArraysAndObjects from './components/C11UpdatingArraysAndObjects.svelte';
+  import C12DeclaringProps from './components/C12DeclaringProps.svelte';
+  import C13DefaultValues from './components/C13DefaultValues.svelte';
+  import C14SpreadProps from './components/C14SpreadProps.svelte';
+  import C16ElseBlocks from './components/C16ElseBlocks.svelte';
+  import C17ElseIfBlocks from './components/C17ElseIfBlocks.svelte';
+  import C18EachBlocks from './components/C18EachBlocks.svelte';
+  import C19KeyedEachBlocks from './components/C19KeyedEachBlocks.svelte';
 
   export let name;
+
+  const obj = {
+    name: 'Pepita',
+    country: 'Colombia',
+  };
+
+  const names;
 </script>
 
 <main>
@@ -23,6 +38,18 @@
 </main>
 <hr />
 <aside>
+  <h2>Logic</h2>
+  <C19KeyedEachBlocks />
+  <C18EachBlocks />
+  <C17ElseIfBlocks />
+  <C16ElseBlocks />
+  <C15IfBlocks />
+  <h2>Props</h2>
+  <C14SpreadProps {...obj} />
+  <C13DefaultValues aProp={'with custom value'} />
+  <C13DefaultValues />
+  <C12DeclaringProps aProp={'Works!'} />
+  <C12DeclaringProps />
   <h2>Reactivity</h2>
   <C11UpdatingArraysAndObjects />
   <C10Statements />
