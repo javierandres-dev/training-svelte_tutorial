@@ -9,4 +9,3 @@
 {:else}
   <button on:click={toggle}>Log in</button>
 {/if}
-<br />

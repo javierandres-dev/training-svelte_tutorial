@@ -1,4 +1,5 @@
 <script>
+  import C20AwaitBlocks from './components/C20AwaitBlocks.svelte';
   import C15IfBlocks from './components/C15IfBlocks.svelte';
   import C01IntroductionBasics from './components/C01Basics.svelte';
   import C02IntroductionAddingData from './components/C02AddingData.svelte';
@@ -26,7 +27,16 @@
     country: 'Colombia',
   };
 
-  const names;
+  let names = [
+    { id: 'qwe', name: 'car' },
+    { id: 'asd', name: 'motorcycle' },
+    { id: 'zxc', name: 'truck' },
+    { id: 'rty', name: 'bus' },
+  ];
+
+  const removeFirstItem = () => {
+    names = names.slice(1);
+  };
 </script>
 
 <main>
@@ -39,10 +49,19 @@
 <hr />
 <aside>
   <h2>Logic</h2>
-  <C19KeyedEachBlocks />
+  <C20AwaitBlocks />
+  <br />
+  <button on:click={removeFirstItem}>Remove first item</button>
+  {#each names as item (item.id)}
+    <C19KeyedEachBlocks name={item.name} />
+  {/each}
+  {#each names as item}
+    <C19KeyedEachBlocks name={item.name} />
+  {/each}
   <C18EachBlocks />
   <C17ElseIfBlocks />
   <C16ElseBlocks />
+  <br />
   <C15IfBlocks />
   <h2>Props</h2>
   <C14SpreadProps {...obj} />
@@ -54,6 +73,7 @@
   <C11UpdatingArraysAndObjects />
   <C10Statements />
   <C09Declarations />
+  <br />
   <C08Assignments />
   <h2>Introduction</h2>
   <C07MakingAnApp />

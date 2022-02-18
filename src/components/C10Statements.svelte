@@ -15,4 +15,3 @@
 <p>count: {count}</p>
 <p>double: {double}</p>
 <button on:click={increment}>Click me</button>
-<br />
