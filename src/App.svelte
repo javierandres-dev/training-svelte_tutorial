@@ -19,6 +19,10 @@
   import C17ElseIfBlocks from './components/C17ElseIfBlocks.svelte';
   import C18EachBlocks from './components/C18EachBlocks.svelte';
   import C19KeyedEachBlocks from './components/C19KeyedEachBlocks.svelte';
+  import C21DomEvents from './components/C21DomEvents.svelte';
+  import C22InlineHandlers from './components/C22InlineHandlers.svelte';
+  import C23EventModifiers from './components/C23EventModifiers.svelte';
+  import C24ComponentEvents from './components/C24ComponentEvents.svelte';
 
   export let name;
 
@@ -48,6 +52,12 @@
 </main>
 <hr />
 <aside>
+  <h2>Events</h2>
+  <C24ComponentEvents />
+  <C23EventModifiers />
+  <C22InlineHandlers />
+  <br />
+  <C21DomEvents />
   <h2>Logic</h2>
   <C20AwaitBlocks />
   <br />
