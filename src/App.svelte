@@ -23,6 +23,8 @@
   import C22InlineHandlers from './components/C22InlineHandlers.svelte';
   import C23EventModifiers from './components/C23EventModifiers.svelte';
   import C24ComponentEvents from './components/C24ComponentEvents.svelte';
+  import C25EventForwarding from './components/C25EventForwarding.svelte';
+  import C26DomEventForwarding from './components/C26DomEventForwarding.svelte';
 
   export let name;
 
@@ -41,6 +43,15 @@
   const removeFirstItem = () => {
     names = names.slice(1);
   };
+
+  const handleMyEvent = (e) => {
+    console.log('event: ', e);
+    alert(e.detail.text);
+  };
+
+  const handleClick = () => {
+    alert('Button clicked');
+  };
 </script>
 
 <main>
@@ -53,7 +64,12 @@
 <hr />
 <aside>
   <h2>Events</h2>
-  <C24ComponentEvents />
+  <C26DomEventForwarding on:click={handleClick} />
+  <br />
+  <C25EventForwarding on:myEvent={handleMyEvent} />
+  <br />
+  <C24ComponentEvents on:myEvent={handleMyEvent} />
+  <br />
   <C23EventModifiers />
   <C22InlineHandlers />
   <br />
