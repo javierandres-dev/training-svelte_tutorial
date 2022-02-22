@@ -1,4 +1,5 @@
 <script>
+  import C27TextInputs from './components/C27TextInputs.svelte';
   import C20AwaitBlocks from './components/C20AwaitBlocks.svelte';
   import C15IfBlocks from './components/C15IfBlocks.svelte';
   import C01IntroductionBasics from './components/C01Basics.svelte';
@@ -25,6 +26,8 @@
   import C24ComponentEvents from './components/C24ComponentEvents.svelte';
   import C25EventForwarding from './components/C25EventForwarding.svelte';
   import C26DomEventForwarding from './components/C26DomEventForwarding.svelte';
+  import C28NumericInputs from './components/C28NumericInputs.svelte';
+  import C29CheckboxInputs from './components/C29CheckboxInputs.svelte';
 
   export let name;
 
@@ -63,6 +66,10 @@
 </main>
 <hr />
 <aside>
+  <h2>Bindings</h2>
+  <C29CheckboxInputs />
+  <C28NumericInputs />
+  <C27TextInputs />
   <h2>Events</h2>
   <C26DomEventForwarding on:click={handleClick} />
   <br />
